@@ -68,7 +68,7 @@ model.fit(
 # evaluate model
 pred = model.predict(x_test, batch_size=BATCH_SIZE)
 pred = np.argmax(pred, axis=1)
-report = classification_report(y_true=y_test, y_pred=pred, target_names=class_names)
+report = classification_report(y_true=y_test.argmax(axis=1), y_pred=pred, target_names=class_names)
 print(report)
 
 # save model
